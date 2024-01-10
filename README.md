@@ -1,11 +1,10 @@
 # alu-AirBnB_clone - The Console
 
-![image]
 
 ## How to start :
 
 Clone the repository
-$ git clone https://github.com/k-ganda/alu-AirBnB_clone.git
+$ git clone https://github.com/m-mwangi/alu-AirBnB_clone.git
 
 Move in to the directory
 $ cd AirBnB_clone
