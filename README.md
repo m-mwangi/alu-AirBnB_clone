@@ -58,41 +58,41 @@ This project is aimed at devoloping a simplified version of the hbnb(airbnb) web
 | place.py      | Place class for future accomodation information      | city_id, user_id, name, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids |
 | review.py     | Review class for future user/host review information | place_id, user_id, text                                                                                                          |
 
-**Example 2: Using basic update with an Id and show command:**
-
-(hbnb) update BaseModel 99f01e9a-99c0-42af-8c10-c35cadee1d8f first_name "Betty"
-(hbnb) show BaseModel 99f01e9a-99c0-42af-8c10-c35cadee1d8f
-[BaseModel] (99f01e9a-99c0-42af-8c10-c35cadee1d8f) {'id': '99f01e9a-99c0-42af-8c10-c35cadee1d8f', 'created_at': datetime.datetime(2020, 7, 1, 11, 36, 30, 773211), 'updated_at': datetime.datetime(2020, 7, 1, 11, 36, 30, 773236), 'first_name': 'Betty'}
-(hbnb) Place.update("492f60f3-ff1e-43c7-bb11-f8407b04dd59", "first_name", "John")
-(hbnb) show Place 492f60f3-ff1e-43c7-bb11-f8407b04dd59
-[Place] (492f60f3-ff1e-43c7-bb11-f8407b04dd59) {'id': '492f60f3-ff1e-43c7-bb11-f8407b04dd59', 'created_at': datetime.datetime(2020, 7, 1, 11, 36, 24, 576486), 'updated_at': datetime.datetime(2020, 7, 1, 11, 36, 24, 576530), 'first_name': 'John'}
-
 ### Tests
 
 All the codes will be tested with the unittest module.
 
-# alu-AirBnB_clone - Web Static
-This is the front end of the Airbnb project. HTML is used to structure the page, while CSS does the styling.
-No Javascript is used.
+# General Execution
+Your shell should work like this in interactive mode:
 
-## How to start
-1. Clone the repository
-   git clone https://github.com/m-mwangi/alu-AirBnB_clone.git
+$ ./console.py
+(hbnb) help
 
-2. Navigate to the repository
-   cd alu-AirBnB_clone
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+But also in non-interactive mode: (like the Shell project in C)
 
-3. Navigate to the directory
-   cd web_static
+$ echo "help" | ./console.py
+(hbnb)
 
-4. Execute the HTML files by Opening them with a live server. 
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
 
-All **CSS files** are in the **styles** folder.
-All **images** are in the **images** folder.
-
-There are **8 HTML files**. These each show the steps to acquire the desired outlook of the project.
-The 8-index.html is the final one with all changes acquired from each step.
-
-After all the HTML files and CSS files are in place, the frontend should look like this:
-![image](https://github.com/m-mwangi/alu-AirBnB_clone/assets/116561806/2d595c6d-55a4-40c1-b2a0-2f9c35925b69)
-
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb)
+$
