@@ -1,90 +1,99 @@
-# AirBnB_clone - Console
+# alu-AirBnB_clone - The Console
 
+![image]
 
-Description of the project
-This is the first part of the project that simulates an airbnb application in which we are creating a way to control the modules that our web page is going to use by intervening a database in json format. Here we apply object oriented programming, python data translation and command interpreted logic to deliver a local database that can be modified by commands.
+## How to start :
 
-General concepts in review
-As you navigate this code base, it is great to note the following concepts, while completing this project.
+Clone the repository
+$ git clone https://github.com/k-ganda/alu-AirBnB_clone.git
 
-How to create a Python package
-How to create a command interpreter in Python using the cmd module
-What is Unit testing and how to implement it in a large project
-How to serialize and deserialize a Class
-How to write and read a JSON file
-How to manage datetime
-What is an UUID
-What is *args and how to use it
-What is **kwargs and how to use it
-How to handle named arguments in a function
-Files and Directories
-models directory will contain all classes used for the entire project. A class, called “model” in a OOP project is the representation of an object/instance.
-tests directory will contain all unit tests.
-console.py file is the entry point of our command interpreter.
-models/base_model.py file is the base class of all our models. It contains common elements:
-attributes: id, created_at and updated_at
-methods: save() and to_json()
-models/engine directory will contain all storage classes (using the same prototype). For the moment I will have only one: file_storage.py.
-Description of the command interpreter
-Commands	Description
-quit	Quits the console
-Ctrl+D	Quits the console
-help or help <command>	Displays all commands or Displays instructions for a specific command
-create <class>	Creates an object of type , saves it to a JSON file, and prints the objects ID
-show <class> <ID>	Shows string representation of an object
-destroy <class> <ID>	Deletes an objects
-all or all <class>	Prints all string representations of all objects or Prints all string representations of all objects of a specific class
-update <class> <id> <attribute name> "<attribute value>"	Updates an object with a certain attribute (new or existing)
-<class>.all()	Same as all <class>
-<class>.count()	Retrieves the number of objects of a certain class
-<class>.show(<ID>)	Same as show <class> <ID>
-<class>.destroy(<ID>)	Same as destroy <class> <ID>
-<class>.update(<ID>, <attribute name>, <attribute value>	Same as update <class> <ID> <attribute name> <attribute value>
-<class>.update(<ID>, <dictionary representation>)	Updates an objects based on a dictionary representation of attribute names and values
-Features
-The Console
-Web static
-MySQL Storage
-Web framework
-RESTFul API
-Web dynamic
-Tech Stack
-HTML5
-CSS3
-Python
-MySQL
-Flask
-General Execution
-Your shell should work like this in interactive mode:
+Move in to the directory
+$ cd AirBnB_clone
 
-$ ./console.py
-(hbnb) help
+Execute the console file
+/AirBnB_clone$ ./console.py
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-(hbnb) 
-(hbnb) quit
-$
-But also in non-interactive mode: (like the Shell project in C)
+## Project Description
 
-$ echo "help" | ./console.py
-(hbnb)
+This project is aimed at devoloping a simplified version of the hbnb(airbnb) website. A complete web application has the following components: The console, website's frontend interface, database storage, and backend API. The project will be developed step by step with each step focusing on a specific aspect of the application.
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb) 
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
+\*\* This is the first step and it consists of a custom command line interface for data management, and the base classes for storage of data. \*\*
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb)
-$
+## Command interpreter Usage :
+
+| **Name**  | **Description**                                                                         |
+| --------- | --------------------------------------------------------------------------------------- |
+| create    | Creates a new instance of the class passed by argument.                                 |
+| show      | Prints the string representation of an instance.                                        |
+| \*destroy | Deletes an instance that was already created.                                           |
+| all       | Prints string representation of all instances or of all instances of a specified class. |
+| \*update  | Updates an instance attribute if exists otherwise create it.                            |
+| help      | Show all commands or display information about a specific command.                      |
+| quit      | Exit the console.                                                                       |
+| EOF       | Exit the console.                                                                       |
+
+\*\*create, destroy and update commands save changes into a JSON file.\*\*
+
+### Console usage with examples :
+
+| Command                                       | Example                                                                                                                        |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Run the console                               | ./console.py                                                                                                                   |
+| Quit the console                              | (hbnb) quit                                                                                                                    |
+| Display the help for a command                | (hbnb) help <command>                                                                                                          |
+| Create an object                              | (hbnb) create <class>                                                                                                          |
+| Show an object                                | (hbnb) show <class> <id> or (hbnb) <class>.show(<id>)                                                                          |
+| Destroy an object                             | (hbnb) destroy <class> <id> or (hbnb) <class>.destroy(<id>)                                                                    |
+| Show all objects, or all instances of a class | (hbnb) all or (hbnb) all <class>                                                                                               |
+| Update an attribute of an object (hbnb)       | update <class> <id> <attribute name> "<attribute value>" or (hbnb) <class>.update(<id>, <attribute name>, "<attribute value>") |
+
+## Models Used
+
+| **File**      | **Description**                                      | **Attributes**                                                                                                                   |
+| ------------- | ---------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| base_model.py | BaseModel class for all the other classes            | id, created_at, updated_at                                                                                                       |
+| user.py       | User class for future user information               | email, password, first_name, last_name                                                                                           |
+| amenity.py    | Amenity class for future amenity information         | name                                                                                                                             |
+| city.py       | City class for future location information           | state_id, name                                                                                                                   |
+| state.py      | State class for future location information          | name                                                                                                                             |
+| place.py      | Place class for future accomodation information      | city_id, user_id, name, description, number_rooms, number_bathrooms, max_guest, price_by_night, latitude, longitude, amenity_ids |
+| review.py     | Review class for future user/host review information | place_id, user_id, text                                                                                                          |
+
+**Example 2: Using basic update with an Id and show command:**
+
+(hbnb) update BaseModel 99f01e9a-99c0-42af-8c10-c35cadee1d8f first_name "Betty"
+(hbnb) show BaseModel 99f01e9a-99c0-42af-8c10-c35cadee1d8f
+[BaseModel] (99f01e9a-99c0-42af-8c10-c35cadee1d8f) {'id': '99f01e9a-99c0-42af-8c10-c35cadee1d8f', 'created_at': datetime.datetime(2020, 7, 1, 11, 36, 30, 773211), 'updated_at': datetime.datetime(2020, 7, 1, 11, 36, 30, 773236), 'first_name': 'Betty'}
+(hbnb) Place.update("492f60f3-ff1e-43c7-bb11-f8407b04dd59", "first_name", "John")
+(hbnb) show Place 492f60f3-ff1e-43c7-bb11-f8407b04dd59
+[Place] (492f60f3-ff1e-43c7-bb11-f8407b04dd59) {'id': '492f60f3-ff1e-43c7-bb11-f8407b04dd59', 'created_at': datetime.datetime(2020, 7, 1, 11, 36, 24, 576486), 'updated_at': datetime.datetime(2020, 7, 1, 11, 36, 24, 576530), 'first_name': 'John'}
+
+### Tests
+
+All the codes will be tested with the unittest module.
+
+# alu-AirBnB_clone - Web Static
+This is the front end of the Airbnb project. HTML is used to structure the page, while CSS does the styling.
+No Javascript is used.
+
+## How to start
+1. Clone the repository
+   git clone https://github.com/k-ganda/alu-AirBnB_clone.git
+
+2. Navigate to the repository
+   cd alu-AirBnB_clone
+
+3. Navigate to the directory
+   cd web_static
+
+4. Execute the HTML files by Opening them with a live server. 
+
+All **CSS files** are in the **styles** folder.
+All **images** are in the **images** folder.
+
+There are **8 HTML files**. These each show the steps to acquire the desired outlook of the project.
+The 8-index.html is the final one with all changes acquired from each step.
+
+After all the HTML files and CSS files are in place, the frontend should look like this:
+![image](https://github.com/k-ganda/alu-AirBnB_clone/assets/116561806/2d595c6d-55a4-40c1-b2a0-2f9c35925b69)
+
