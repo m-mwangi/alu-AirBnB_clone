@@ -14,7 +14,7 @@ Execute the console file
 
 ## Project Description
 
-This project is aimed at devoloping a simplified version of the hbnb(airbnb) website. A complete web application has the following components: The console, website's frontend interface, database storage, and backend API. The project will be developed step by step with each step focusing on a specific aspect of the application.
+This project is aimed at developing a simplified version of the hbnb(airbnb) website. A complete web application has the following components: The console, website's frontend interface, database storage, and backend API. The project will be developed step by step with each step focusing on a specific aspect of the application.
 
 \*\* This is the first step and it consists of a custom command line interface for data management, and the base classes for storage of data. \*\*
 
@@ -62,7 +62,7 @@ This project is aimed at devoloping a simplified version of the hbnb(airbnb) web
 
 All the codes will be tested with the unittest module.
 
-# General Execution
+General Execution
 Your shell should work like this in interactive mode:
 
 $ ./console.py
